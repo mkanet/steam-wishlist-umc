@@ -1,0 +1,27 @@
+{
+  "config": {
+    "error": {
+      "invalid_profile_id": "Could not find a Steam profile with the provided ID.",
+      "invalid_user": "Could not find a steam account associated with the provided name or your profile is not public, see https://github.com/boralyl/steam-wishlist#pre-installation",
+      "missing": "Enter your Steam account name or Steam profile ID."
+    },
+    "step": {
+      "user": {
+        "data": {
+          "steam_account_name": "Steam account name",
+          "steam_profile_id": "Steam profile id (e.g. 7656119383323351)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "show_all_wishlist_items": "Display non-sale wishlist items too in Upcoming Media Card‎ ‎ (reboot required)"
+        }
+      }
+    }
+  }
+}

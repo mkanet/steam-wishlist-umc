@@ -1,0 +1,11 @@
+{
+  "domain": "steam_wishlist_umc",
+  "name": "Steam Wishlist UMC",
+  "codeowners": ["@MKANET"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/mkanet/steam-wishlist-umc",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "2.2.3"
+}

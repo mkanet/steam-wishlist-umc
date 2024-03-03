@@ -10,7 +10,9 @@
         "data": {
           "steam_account_name": "Steam account name",
           "steam_profile_id": "Steam profile id (e.g. 7656119383323351)"
-        }
+        },
+        "description": "Enter EITHER your Steam account name OR your Steam profile ID.",
+        "title": "Setup"
       }
     }
   },
@@ -19,7 +21,7 @@
       "init": {
         "title": "Options",
         "data": {
-          "show_all_wishlist_items": "Display non-sale wishlist items too in Upcoming Media Card‎ ‎ (reboot required)"
+          "show_all_wishlist_items": "Display non-sale wishlist items too in Upcoming Media Card (reboot required)"
         }
       }
     }

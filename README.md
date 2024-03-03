@@ -10,6 +10,7 @@ This custom component was originally adapted from https://github.com/boralyl/ste
 [![sensor.steam_wishlist](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/setup.png)](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/setup.png)
 
 NOTE: The optional setting below will also display non-sale wishlist items too.  Useful for games not released yet (disabled by default).
+
 [![sensor.steam_wishlist](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/show-non-saletoo.png)](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/show-non-saletoo.png)
 
 ## Pre-Installation

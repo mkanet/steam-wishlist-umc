@@ -9,7 +9,7 @@ This custom component was originally adapted from https://github.com/boralyl/ste
 
 [![sensor.steam_wishlist](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/setup.png)](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/setup.png)
 
-Enable the optional setting below (not enabled by default) to display non-sale wishlist items too in Upcoming Media Card.  This is useful for games that aren't released yet.
+NOTE: The optional setting below will also display non-sale wishlist items too.  Useful for games not released yet (disabled by default).
 [![sensor.steam_wishlist](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/show-non-saletoo.png)](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/show-non-saletoo.png)
 
 ## Pre-Installation
@@ -72,34 +72,37 @@ The following state attributes are available for this sensor:
 | attribute       | description                                              |
 | --------------- | -------------------------------------------------------- |
 | title           | Title of the game                                        |
+| rating          | Reviews e.g. `Reviews: 92% (Very Positive)` _(formatted)_|
+| price           | Price description of game _(formatted)_                  |
+| genres          | Genres of game e.g. `FPS, Action, First-Person, Shooter` |
+| release         | Release date of game                                     |
+| airdate         | Date game was released (Unix timestamp format)           |
+| normal_price    | Price                                                    |
+| percent_off     | Percentage off of the normal price
+| review_desc     | Review description _(value only)_                        |
+| reviews_percent | Percentage of positive reviews _(value only)_            |
+| reviews_total   | Total number of reviews _(value only)_                   |
+| sale_price      | Sale price of the game.                                  |
+| steam_id        | Steam ID of the game.                                    |
 | fanart          | URL for the background image (fanart mode)               |
 | poster          | URL for the background game  (poster mode)               |
 | deep_link       | Direct url link to game on steam when clicked in UMC     |
-| normal_price    | Price                                                    |
-| percent_off     | Percentage off of the normal price.                      |
-| sale_price      | Sale price of the game.                                  |
-| steam_id        | Steam ID of the game.                                    |
-| airdate         | Date game was released (Unix timestamp format)           |
-| review_desc     | Review description _(value only)_|
-| reviews_percent | Percentage of positive reviews _(value only)_            |
-| reviews_total   | Total number of reviews _(value only)_                   |
-| rating          | Reviews e.g. `Reviews: 92% (Very Positive)` _(formatted)_|
-| price           | Price description of game                                |
-| release         | Release date of game                                     |
-| tags            | (Attributes)                                             |
-| genres          | Genres of game e.g. `FPS, Action, First-Person, Shooter` |
 
 ## Displaying in Lovelace
 
 You can use 
 [upcoming-media-card](https://github.com/custom-cards/upcoming-media-card)
-to display the games on sale from your Steam wish list.
+to display wishlist items on sale _(or optionally display all wishlist items)_.
 
+Example:
 ```yaml
 - type: custom:upcoming-media-card
   entity: sensor.steam_wishlist_umc_978793482343112
   title: Steam Wishlist
-  image_style: backgroundart
+  image_style: fanart
+  collapse: 2
+  sort_by: sale_price
+  sort_ascending: false
   max: 10
 ```
 

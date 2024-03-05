@@ -48,14 +48,14 @@ def get_steam_game(game_id: int, game: Dict[str, Any], config_entry) -> SteamGam
             original_price_formatted = f"{original_price:.2f}"
             if sale_price is not None:
                 strikethrough_price = ''.join(ch + "\u0336" for ch in original_price_formatted[:-1]) + original_price_formatted[-1]
-                price_info = f"{strikethrough_price} ${sale_price_val:.2f} &#40;{discount_percentage}% off&#41; 🎫"
+                price_info = f"{strikethrough_price} ${sale_price_val:.2f} &#40;{discount_percentage}% off&#41;&nbsp;&nbsp;🎫"
             else:
                 price_info = f"Price:&nbsp;&nbsp;${original_price:.2f}"
     except (ValueError, TypeError):
         price_info = "Price information unavailable"
 
 
-    release_date = ("Release date:&nbsp;&nbsp;" + datetime.datetime.utcfromtimestamp(int(game.get("release_date", "0"))).strftime("%b %d, %Y") + " 🆕" if datetime.datetime.utcnow() < datetime.datetime.utcfromtimestamp(int(game.get("release_date", 0))) else "Released:&nbsp;&nbsp;" + datetime.datetime.utcfromtimestamp(int(game.get("release_date", "0"))).strftime("%b %d, %Y")) if str(game.get("release_date", "0")).isdigit() else "Unknown"
+    release_date = ("Release date:&nbsp;&nbsp;" + datetime.datetime.utcfromtimestamp(int(game.get("release_date", "0"))).strftime("%b %d, %Y") + "&nbsp;&nbsp;🆕" if datetime.datetime.utcnow() < datetime.datetime.utcfromtimestamp(int(game.get("release_date", "0")) + 86400) else "Released:&nbsp;&nbsp;" + datetime.datetime.utcfromtimestamp(int(game.get("release_date", "0"))).strftime("%b %d, %Y")) if str(game.get("release_date", "0")).isdigit() else "Unknown"
 
     return {
         "title": game["name"],

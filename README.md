@@ -9,10 +9,6 @@ This custom component was originally adapted from https://github.com/boralyl/ste
 
 [![sensor.steam_wishlist](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/setup.png)](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/setup.png)
 
-NOTE: The optional setting below will also display non-sale wishlist items too.  Useful for games not released yet (disabled by default).
-
-[![sensor.steam_wishlist](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/show-non-saletoo.png)](https://github.com/mkanet/steam-wishlist-umc/raw/main/assets/show-non-saletoo.png)
-
 ## Pre-Installation
 
 Prior to installing this integration you must first ensure that your wishlist is publicly
@@ -98,12 +94,12 @@ to display wishlist items on sale _(or optionally display all wishlist items)_.
 Example:
 ```yaml
 - type: custom:upcoming-media-card
-  entity: sensor.steam_wishlist_umc_978793482343112
+  entity: sensor.steam_wishlist_978793482343112
   title: Steam Wishlist
   image_style: fanart
-  collapse: 2
-  sort_by: sale_price
-  sort_ascending: false
+  collapse: price=🎫
+  sort_by: price
+  sort_ascending: true
   max: 10
 ```
 
